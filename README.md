@@ -2,9 +2,13 @@
 
 ### Background
 
-Maze Race compares algorithms such as Breadth First Search, A*, Best First Search, and Dijkstra.  It shows a visual representation of how the algorithms work.  It also shows those algorithms happening side-by-side for a visual comparison.
+Maze Race compares algorithms such as Breadth First Search, A*, Best First Search, and Dijkstra.  Maze Race is inspired by [Pathfinder.js](https://qiao.github.io/PathFinding.js/visual/)
+
+It shows a visual representation of how the algorithms work.  It also shows those algorithms happening side-by-side for a visual comparison.  Like Pathfinder.js, Maze race has a grid where a start and end point can be placed.  Walls can also be placed that the search algorithms will have to go around when searching for the endpoint.
 
 Users can create the maze by setting the start/end positions and placing walls on a grid.  Then they can choose from the algorithm options and watch how the maze gets solved, and compare the algorithms with each other.
+
+When the user presses "Start" the grid will be duplicated and side-by-side grids will be displayed.  Each step will light up the square actively being searched on each grid based on the algorithms being used.  A grid will remain lit up until one of it's children squares are searched so the perimeter that has been searched will be lit up. When the end is found a line will be rendered to show the path from the start point to the end point.
 
 ### Functionality & MVP
 
@@ -43,7 +47,7 @@ This project will be implemented using Vanilla JS and possibly jQuery to simplif
 
 **Day 2**: Get Breadth First Search algorithm implemented and the simulation working lighting up the appropriate squares as it solves the maze.
 
-- Implement a generalized way of marking squares on the grid when the algorithm is actively searching them.
+- Implement a render function that will light up squares that are being searched.  The search algorithms will mark squares as being searched and the render function will light up those squares by changing the background color.
 - Create a Node and queue to be utilized for Breadth First Search
 
 **Day 3**: Implement the Dijkstra, Best First Search, and A* algorithms with side-by-side comparison.
