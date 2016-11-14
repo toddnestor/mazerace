@@ -24,9 +24,9 @@ In addition, this project will include:
 
 This app will consist of a single page with grid that the user can set up the maze on, a list of algorithms the user can choose from, and links to the GitHub, my LinkedIn, my porfolio site, and modals that explain each algorithm.  The controls will include a start, pause, and reset button.  When a simulation is started it will show two duplicate grids side-by-side, lighting up the squares as the algorithms check them.
 
-![wireframes](https://devbook.objects.cdn.dream.io/media_items/media/000/000/117/large/New_Mockup_1.png?1479106289)
+![wireframes](https://devbook.objects.cdn.dream.io/media_items/media/000/000/117/large/New_Mockup_1.png)
 
-![wireframes](https://devbook.objects.cdn.dream.io/media_items/media/000/000/116/large/New_Mockup_1_copy.png?1479106286)
+![wireframes](https://devbook.objects.cdn.dream.io/media_items/media/000/000/116/large/New_Mockup_1_copy.png)
 
 
 ### Architecture and Technologies
