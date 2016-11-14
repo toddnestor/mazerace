@@ -8,7 +8,7 @@ It shows a visual representation of how the algorithms work.  It also shows thos
 
 Users can create the maze by setting the start/end positions and placing walls on a grid.  Then they can choose from the algorithm options and watch how the maze gets solved, and compare the algorithms with each other.
 
-When the user presses "Start" the grid will be duplicated and side-by-side grids will be displayed.  Each step will light up the square actively being searched on each grid based on the algorithms being used.  A grid will remain lit up until one of it's children squares are searched so the perimeter that has been searched will be lit up. When the end is found a line will be rendered to show the path from the start point to the end point.
+When the user presses "Start" the grid is duplicated and side-by-side grids are displayed.  Each step lights up the square actively being searched on each grid based on the algorithms being used.  A square remains lit up until one of it's children squares is searched so the perimeter that has been searched will be lit up. When the end is found a line will be rendered to show the path from the start point to the end point.
 
 ### Functionality & MVP
 
