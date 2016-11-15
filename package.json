@@ -1,0 +1,26 @@
+{
+  "name": "mazerace",
+  "version": "1.0.0",
+  "description": "### Background",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toddnestor/mazerace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toddnestor/mazerace/issues"
+  },
+  "homepage": "https://github.com/toddnestor/mazerace#readme",
+  "dependencies": {
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.12.5",
+    "sass-loader": "^4.0.2",
+    "webpack": "^1.13.3"
+  }
+}

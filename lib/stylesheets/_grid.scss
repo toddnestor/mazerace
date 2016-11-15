@@ -1,0 +1,24 @@
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after, .row:after {
+  content: "";
+  position: absolute;
+  height: 0;
+  clear: both;
+}
+
+.col-* {
+  float: left;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@for $i from 1 through 12 {
+  .col-*-#{$i} {
+    width: 100% / 12 * $i
+  }
+}
