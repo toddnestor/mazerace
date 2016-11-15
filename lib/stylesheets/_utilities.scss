@@ -1,0 +1,224 @@
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+$spacer: 20px !default;
+
+.p {
+  padding: $spacer;
+}
+
+.p-md {
+  padding: $spacer * 1.5;
+}
+
+.p-lg {
+  padding: $spacer * 2;
+}
+
+.m {
+  margin: $spacer;
+}
+
+.m-md {
+  margin: $spacer * 1.5;
+}
+
+.m-lg {
+  margin: $spacer * 2;
+}
+
+.p-t {
+  padding-top: $spacer;
+}
+
+.p-t-md {
+  padding-top: $spacer * 1.5;
+}
+
+.p-t-lg {
+  padding-top: $spacer * 2;
+}
+
+.m-t {
+  margin-top: $spacer;
+}
+
+.m-t-md {
+  margin-top: $spacer * 1.5;
+}
+
+.m-t-lg {
+  margin-top: $spacer * 2;
+}
+
+
+.p-r {
+  padding-right: $spacer;
+}
+
+.p-r-md {
+  padding-right: $spacer * 1.5;
+}
+
+.p-r-lg {
+  padding-right: $spacer * 2;
+}
+
+.m-r {
+  margin-right: $spacer;
+}
+
+.m-r-md {
+  margin-right: $spacer * 1.5;
+}
+
+.m-r-lg {
+  margin-right: $spacer * 2;
+}
+
+.p-l {
+  padding-left: $spacer;
+}
+
+.p-l-md {
+  padding-left: $spacer * 1.5;
+}
+
+.p-l-lg {
+  padding-left: $spacer * 2;
+}
+
+.m-l {
+  margin-left: $spacer;
+}
+
+.m-l-md {
+  margin-left: $spacer * 1.5;
+}
+
+.m-l-lg {
+  margin-left: $spacer * 2;
+}
+
+.p-b {
+  padding-bottom: $spacer;
+}
+
+.p-b-md {
+  padding-bottom: $spacer * 1.5;
+}
+
+.p-b-lg {
+  padding-bottom: $spacer * 2;
+}
+
+.m-b {
+  margin-bottom: $spacer;
+}
+
+.m-b-md {
+  margin-bottom: $spacer * 1.5;
+}
+
+.m-b-lg {
+  margin-bottom: $spacer * 2;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.pos-f {
+  position: fixed;
+}
+
+.pos-s {
+  position: static;
+}
+
+@for $i from 1 through 200 {
+  .#{$i}-px-wide {
+    width: #{$i * 5}px;
+  }
+
+  .#{$i}-px-tall {
+    height: #{$i}px;
+  }
+}
+
+@each $colorName, $color in $colors {
+  .#{$colorName}-bg {
+    background-color: $color;
+  }
+
+  .#{$colorName}-font {
+    color: $color;
+  }
+
+  .#{$colorName}-border {
+    border-color: $color;
+  }
+
+  .#{$colorName}-font-hover:hover {
+    color: $color;
+  }
+
+  .#{$colorName}-bg-hover:hover {
+    background-color: $color;
+  }
+
+  .#{$colorName}-border-hover:hover {
+    border-color: $color;
+  }
+}
+
+$header-size: 18px;
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: $header-size / $i + $header-size;
+  }
+}
+
+@for $i from 1 through 50 {
+  .#{$i}px-font {
+    font-size: #{$i}px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bold-hover:hover {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.underline-hover:hover {
+  text-decoration: underline;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}

@@ -21,4 +21,8 @@
   .col-*-#{$i} {
     width: 100% / 12 * $i
   }
+
+  .col-*-offset-#{$i} {
+    margin-left: 100% / 12 * $i
+  }
 }

@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-  entry: './lib/mazerace.jsx',
+  entry: './lib/mazerace.js',
   output: {
     path: path.join(__dirname, 'lib'),
     filename: 'bundle.js'
@@ -18,7 +18,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['es2015']
         }
       },
       {
