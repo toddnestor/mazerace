@@ -1719,6 +1719,24 @@ a, a:hover {
 .lightblack-border-hover:hover {
   border-color: #34495e; }
 
+.carrot-bg {
+  background-color: #e67e22; }
+
+.carrot-font {
+  color: #e67e22; }
+
+.carrot-border {
+  border-color: #e67e22; }
+
+.carrot-font-hover:hover {
+  color: #e67e22; }
+
+.carrot-bg-hover:hover {
+  background-color: #e67e22; }
+
+.carrot-border-hover:hover {
+  border-color: #e67e22; }
+
 .yellow-bg {
   background-color: #f1c40f; }
 
