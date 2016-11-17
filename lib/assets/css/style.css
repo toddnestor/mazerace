@@ -2060,7 +2060,8 @@ h6 {
 nav.top-nav {
   left: 0;
   right: 0;
-  top: 0; }
+  top: 0;
+  z-index: 1; }
   nav.top-nav .logo {
     font-size: 24px; }
   nav.top-nav ul li {
