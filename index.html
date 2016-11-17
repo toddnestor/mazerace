@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Maze Race</title>
     <link rel="stylesheet" href="./lib/assets/css/style.css" media="screen" title="no title">
+    <script src="https://use.fontawesome.com/47840e1e1f.js"></script>
     <script src="./lib/vendor/async.js" charset="utf-8"></script>
     <script src="./lib/vendor/raphael.js" charset="utf-8"></script>
     <script src="./lib/bundle.js" charset="utf-8"></script>
@@ -34,8 +35,31 @@
     <div class="row">
       <div class="col-8 p-lg" id="chooser-grid">
       </div>
-      <div class="col-4 p controls">
-        controls go here
+      <div class="col-4 p-lg">
+        <div class="controls">
+          <div class="header text-center white-font red-bg p">
+            Controls
+          </div>
+          <div class="instructions darkblue-font p">
+            <span class="bold asterisk">Instructions: </span> Drag the <span class="emerald-font bold">green</span> square to set the start position.
+            Drag the <span class="red-font bold">red</span> square to set the end position.
+            Click any of the white squares and drag to set the walls.
+            Click a wall (the <span class="lightgrey-font bold">gray</span> squares) and drag to remove the walls.
+            <p class="m-t">
+              Choose two algorithms to watch them "race" each other.
+            </p>
+          </div>
+          <div class="m-t-md algorithm-selection">
+            <h3 class="text-center">Algorithms <small class="grey-font">(select two)</small></h3>
+            <ul class="p-l p-r m-t-md">
+            </ul>
+          </div>
+          <div class="m control-buttons text-center m-t-lg">
+            <i class="fa fa-play fa-5x emerald-font p pointer play-button control-button" aria-hidden="true"></i>
+            <i class="fa fa-pause fa-5x grey-font p pointer pause-button control-button" aria-hidden="true"></i>
+            <i class="fa fa-refresh fa-5x pomegranate-font p pointer restart-button control-button" aria-hidden="true"></i>
+          </div>
+        </div>
       </div>
     </div>
   </body>

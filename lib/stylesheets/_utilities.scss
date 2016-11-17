@@ -16,12 +16,20 @@ $spacer: 20px !default;
   padding: $spacer;
 }
 
+.p-sm {
+  padding: $spacer * 0.5;
+}
+
 .p-md {
   padding: $spacer * 1.5;
 }
 
 .p-lg {
   padding: $spacer * 2;
+}
+
+.m-sm {
+  margin: $spacer * 0.5;
 }
 
 .m {
@@ -221,4 +229,14 @@ $header-size: 18px;
 
 .pull-left {
   float: left;
+}
+
+.asterisk {
+  position: relative;
+}
+
+.asterisk:before {
+  content: "*";
+  position: absolute;
+  left: -8px;
 }

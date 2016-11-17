@@ -12,3 +12,53 @@ body {
 img {
   max-width: 100%;
 }
+
+.controls {
+  border-radius: 4px;
+  min-height: 500px;
+  border: 1px solid #{map-get($colors, red)};
+
+  .header {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .algorithm-selection {
+    ul {
+      li {
+        label {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .control-button {
+    text-shadow: 3px 5px 5px black;
+
+    &:active {
+      text-shadow: 0 2px 3px black;
+    }
+  }
+}
+
+small {
+  font-size: small;
+  line-height: 1em;
+  vertical-align: middle;
+}
+
+button {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+svg {
+  rect {
+    cursor: default !important;
+  }
+}
