@@ -2074,7 +2074,16 @@ body {
 img {
   max-width: 100%; }
 
+.controls-parent.closed {
+  height: 0;
+  width: 0;
+  clear: both;
+  padding: 0; }
+
 .controls {
+  transition-property: all;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
   border-radius: 4px;
   min-height: 500px;
   border: 1px solid #e74c3c; }
@@ -2087,6 +2096,24 @@ img {
     text-shadow: 3px 5px 5px black; }
     .controls .control-button:active {
       text-shadow: 0 2px 3px black; }
+  .controls.closed {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+    min-height: 0;
+    top: 65px; }
+    .controls.closed .control-buttons {
+      margin-top: 20px; }
+    .controls.closed .control-button {
+      opacity: 0.5; }
+      .controls.closed .control-button:hover {
+        opacity: 1; }
+    .controls.closed .instructions {
+      display: none; }
+    .controls.closed .algorithm-selection {
+      display: none; }
 
 small {
   font-size: small;
@@ -2102,5 +2129,14 @@ button {
 
 svg rect {
   cursor: default !important; }
+
+#chooser-grid {
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
+  #chooser-grid.closed {
+    max-height: 0;
+    padding: 0; }
 
 /*# sourceMappingURL=style.css.map*/

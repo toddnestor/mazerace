@@ -13,7 +13,17 @@ img {
   max-width: 100%;
 }
 
+.controls-parent.closed {
+  height: 0;
+  width: 0;
+  clear: both;
+  padding: 0;
+}
+
 .controls {
+  transition-property: all;
+	transition-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
   border-radius: 4px;
   min-height: 500px;
   border: 1px solid #{map-get($colors, red)};
@@ -40,6 +50,36 @@ img {
       text-shadow: 0 2px 3px black;
     }
   }
+
+  &.closed {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+    min-height: 0;
+    top: 65px;
+
+    .control-buttons {
+      margin-top: 20px;
+    }
+
+    .control-button {
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .instructions {
+      display: none;
+    }
+
+    .algorithm-selection {
+      display: none;
+    }
+  }
 }
 
 small {
@@ -60,5 +100,17 @@ button {
 svg {
   rect {
     cursor: default !important;
+  }
+}
+
+#chooser-grid {
+  overflow: hidden;
+  transition-property: all;
+	transition-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+  &.closed {
+    max-height: 0;
+    padding: 0;
   }
 }
