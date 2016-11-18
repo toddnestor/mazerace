@@ -2159,6 +2159,15 @@ svg rect {
   transition-duration: 1.5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
 
+.stats {
+  font-size: 16px;
+  position: absolute;
+  left: 80px;
+  bottom: 30px;
+  text-shadow: 0 0 10px black;
+  text-align: left;
+  line-height: 1.3em; }
+
 .transparent {
   opacity: 0 !important; }
 
