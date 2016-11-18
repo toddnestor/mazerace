@@ -2116,6 +2116,8 @@ img {
       display: none; }
     .controls.closed .algorithm-options {
       display: none; }
+    .controls.closed .erase-button {
+      display: none; }
 
 small {
   font-size: small;
@@ -2140,5 +2142,8 @@ svg rect {
   #chooser-grid.closed {
     max-height: 0;
     padding: 0; }
+
+.hidden {
+  display: none !important; }
 
 /*# sourceMappingURL=style.css.map*/

@@ -83,6 +83,10 @@ img {
     .algorithm-options {
       display: none;
     }
+
+    .erase-button {
+      display: none;
+    }
   }
 }
 
@@ -117,4 +121,8 @@ svg {
     max-height: 0;
     padding: 0;
   }
+}
+
+.hidden {
+  display: none !important;
 }

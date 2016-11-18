@@ -51,6 +51,7 @@
           </div>
           <div class="m-t-md algorithm-selection">
             <h3 class="text-center">Algorithms <small class="grey-font">(select up to two)</small></h3>
+            <div class="text-center m-t hidden" id="did-it-wrong"><span class="red-font bold asterisk">You must select at least one algorithm</span></div>
             <ul class="p-l p-r m-t-md">
             </ul>
           </div>
@@ -59,16 +60,16 @@
             <ul class="p-l p-r m-t-md">
               <li>
                 <label>
-                  <input type="checkbox" id="allow-diagonal" /> Allow diagonal
+                  <input type="checkbox" checked id="allow-diagonal" /> Allow diagonal
                 </label>
               </li>
             </ul>
           </div>
           <div class="m control-buttons text-center m-t-lg">
-            <i class="fa fa-play fa-4x emerald-font p pointer play-button control-button" aria-hidden="true"></i>
-            <i class="fa fa-pause fa-4x grey-font p pointer pause-button control-button" aria-hidden="true"></i>
-            <i class="fa fa-refresh fa-4x pomegranate-font p pointer restart-button control-button" aria-hidden="true"></i>
-            <i class="fa fa-eraser fa-4x carrot-font p pointer erase-button control-button" aria-hidden="true"></i>
+            <i class="fa fa-play fa-4x emerald-font p pointer play-button control-button" title="Solve maze"></i>
+            <i class="fa fa-pause fa-4x grey-font p pointer pause-button control-button hidden" title="pause"></i>
+            <i class="fa fa-refresh fa-4x pomegranate-font p pointer restart-button control-button" title="Reset"></i>
+            <i class="fa fa-eraser fa-4x carrot-font p pointer erase-button control-button" title="Clear walls and reset"></i>
           </div>
         </div>
       </div>
