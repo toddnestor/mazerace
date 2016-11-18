@@ -53,7 +53,7 @@ One thing to keep in mind is that in MazeRace it is only considered one step to 
 
 ### Technology
 
-  MazeRace is a single page app that utilizes **Raphaël** for working with vector graphics, **async** for making creating asynchronous calls so the DOM renders faster, and a lot of **Vanilla JS** for the algorithm logic, DOM manipulation, and event bindings.
+  MazeRace is a single page app that utilizes **Raphaël** for working with vector graphics, **async** for making asynchronous calls to normal methods so the DOM renders faster, and a lot of **Vanilla JS** for the algorithm logic, DOM manipulation, and event bindings.
 
 ## Algorithms
 
