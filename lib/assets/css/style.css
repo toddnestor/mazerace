@@ -2118,6 +2118,8 @@ img {
       display: none; }
     .controls.closed .erase-button {
       display: none; }
+    .controls.closed .demo {
+      display: none; }
 
 small {
   font-size: small;
@@ -2159,5 +2161,17 @@ svg rect {
 
 .transparent {
   opacity: 0 !important; }
+
+.demo {
+  text-align: center; }
+  .demo button {
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 5px 5px black; }
+    .demo button:active {
+      box-shadow: 0 2px 3px black; }
 
 /*# sourceMappingURL=style.css.map*/
