@@ -57,7 +57,7 @@ One thing to keep in mind is that in MazeRace it is only considered one step to 
 
 ## Algorithms
 
-  So far I have implemented **Breadth First Search**, **Depth First Search**, a generic **Best First Search**, and **A\*** search (which is a type of a **Best First Search**).
+  So far I have implemented **Breadth First Search**, **Depth First Search**, a generic **Best First Search**, and **A*** search (which is a type of a **Best First Search**).
 
   The various algorithms all have similarities, so they all have a parent class of **AlgorithmBase** which sets up the store, the stats tracking, and the hash of which squares have already been visited.  In addition it provides the methods to mark a square as visited, check if a square was visited, and to process a square and add all of that square's neighbors to the store.  In all the algorithms after finding the target it traces the path by following the parent of each node until it hits the starting node.  To do this the parent is set while processing each node.
 
