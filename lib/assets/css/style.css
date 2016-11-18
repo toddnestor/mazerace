@@ -2114,6 +2114,8 @@ img {
       display: none; }
     .controls.closed .algorithm-selection {
       display: none; }
+    .controls.closed .algorithm-options {
+      display: none; }
 
 small {
   font-size: small;
