@@ -16,7 +16,7 @@
       </a>
       <ul class="pull-right">
         <li class="p-r">
-          <a href="#" class="white-font darkblue-font-hover bold-hover">
+          <a href="#" modal="#about" class="white-font darkblue-font-hover bold-hover">
             About
           </a>
         </li>
@@ -28,6 +28,11 @@
         <li class="p-r">
           <a href="http://toddnestor.com" target="_blank" class="white-font darkblue-font-hover bold-hover">
             Portfolio
+          </a>
+        </li>
+        <li class="p-r">
+          <a href="https://github.com/toddnestor/mazerace" target="_blank" class="white-font darkblue-font-hover bold-hover">
+            GitHub
           </a>
         </li>
       </ul>
@@ -84,6 +89,114 @@
       <div class="col-6 p-lg text-center">
         <h2 class="darkblue-font text-center bold m-b algorithm2"></h2>
         <div id="secondAlgorithm" class="pos-r"></div>
+      </div>
+    </div>
+    <div class="modal hidden">
+      <div class="content p-lg">
+        <span class="pos-a darkgrey-font close">&times;</span>
+        <div class="body">
+        </div>
+      </div>
+    </div>
+    <div id="about" class="hidden">
+      <div class="darkblue-font">
+        <h2 class="text-center m-b-md">About MazeRace</h2>
+        <p class="p">
+          MazeRace compares algorithms such as Breadth First Search, A*, Best First Search, and Depth First Search. Maze Race is inspired by Pathfinder.js
+        </p>
+        <p class="p">
+          It shows a visual representation of how the algorithms work. It also shows those algorithms happening side-by-side for a visual comparison. Like Pathfinder.js, Maze race has a grid where a start and end point can be placed. Walls can also be placed that the search algorithms will have to go around when searching for the endpoint.
+        </p>
+        <p class="p">
+          Users can create the maze by setting the start/end positions and placing walls on a grid. Then they can choose from the algorithm options and watch how the maze gets solved, and compare the algorithms with each other.
+        </p>
+        <p class="p">
+          When the user presses "Start" the grid is duplicated and side-by-side grids are displayed. Each step lights up the square actively being searched on each grid based on the algorithms being used. A square remains lit up until one of it's children squares is searched so the perimeter that has been searched will be lit up. When the end is found a line will be rendered to show the path from the start point to the end point.
+        </p>
+        <p class="p">
+          One thing to keep in mind is that in MazeRace it is only considered one step to get from a square to it's neighbor regardless of whether the neighbor is diagonal from the square or not. This leads to paths that are considred equal lengths even though one may technically be longer due to diagonal movement.
+        </p>
+      </div>
+    </div>
+    <div id="bfs" class="hidden">
+      <div class="darkblue-font">
+        <h2 class="text-center m-b-md">Breadth First Search</h2>
+        <p class="p">
+          In a <span class="bold">Breadth First Search</span>, we start by processing the starting node (in the context of Maze Race, nodes are squares) and getting it's neighbors.
+        </p>
+        <p class="p">
+          We check each of it's neighbors to see if they are the target (or ending square), if they are we return that target and then trace the path from it back to the starting node.
+          If we don't find the target we add each of the neighbors to the queue and then we start the process over taking the node from the queue that has been in there the longest (this is known as "First In First Out") and processing it the same way as the starting node.
+        </p>
+        <p class="p">
+          We continue this process until we find the target or the queue is empty.  This method ensures if we do find the target, we found the shortest path to it also as it was the first path we found while checking every possible path.
+        </p>
+        <p class="p">
+          To be able to trace the path back to the starting node, we set the parent of each of a node's neighbors to the node itself.  Then to trace the path from the target we simply follow it's the parent of each node until we reach the starting node.
+        </p>
+      </div>
+    </div>
+    <div id="dfs" class="hidden">
+      <div class="darkblue-font">
+        <h2 class="text-center m-b-md">Depth First Search</h2>
+        <p class="p">
+          In a <span class="bold">Depth First Search</span>, we start by processing the starting node (in the context of Maze Race, nodes are squares) and getting it's neighbors.
+        </p>
+        <p class="p">
+          We check each of it's neighbors to see if they are the target (or ending square), if they are we return that target and then trace the path from it back to the starting node.
+          If we don't find the target we add each of the neighbors to the stack and then we start the process over taking the node from the stack that was most recently added, this is known as "Last In First Out."
+        </p>
+        <p class="p">
+          We contiue this process until we find the target or the queue is empty.  This method does not return the shortest path as it just keeps checking neighbors of the last node added until it reaches the target.  It is not an effective algorithm to solve a maze.
+        </p>
+        <p class="p">
+          To be able to trace the path back to the starting node, we set the parent of each of a node's neighbors to the node itself.  Then to trace the path from the target we simply follow it's the parent of each node until we reach the starting node.
+        </p>
+      </div>
+    </div>
+    <div id="best" class="hidden">
+      <div class="darkblue-font">
+        <h2 class="text-center m-b-md">Best First Search</h2>
+        <p class="p">
+          In a <span class="bold">Best First Search</span>, we start by processing the starting node (in the context of Maze Race, nodes are squares) and getting it's neighbors.
+        </p>
+        <p class="p">
+          We check each of it's neighbors to see if they are the target (or ending square), if they are we return that target and then trace the path from it back to the starting node.
+          If we don't find the target we add each of the neighbors to the stack and then we start the process over taking the node that is closest to the target.  In Maze Race closeness is calculated as the distance between the square and the target.
+        </p>
+        <p class="p">
+          We contiue this process until we find the target or the queue is empty.  This method does not necessarily return the shortest path, just the quickest to find.
+        </p>
+        <p class="p">
+          To be able to trace the path back to the starting node, we set the parent of each of a node's neighbors to the node itself.  Then to trace the path from the target we simply follow it's the parent of each node until we reach the starting node.
+        </p>
+      </div>
+    </div>
+    <div id="astar" class="hidden">
+      <div class="darkblue-font">
+        <h2 class="text-center m-b-md">A*</h2>
+        <p class="p">
+          In an <span class="bold">A*</span>, we start by processing the starting node (in the context of Maze Race, nodes are squares) and getting it's neighbors.
+          <span class="bold">A*</span> is a type of <span class="bold">Best First Search</span> that returns the shortest route.
+        </p>
+        <p class="p">
+          We check each of it's neighbors to see if they are the target (or ending square), if they are we return that target and then trace the path from it back to the starting node.
+          If we don't find the target we add each of the neighbors to the stack and then we start the process over taking the node that is closest to the target.  In Maze Race closeness is calculated as the distance between the square and the target.
+        </p>
+        <p class="p">
+          We contiue this process until we find the target or the queue is empty.  Unlike the more generic <span class="bold">Best First Search</span>, the <span class="bold">A*</span> search returns the shortest path.
+        </p>
+        <p class="p">
+          To be able to have the shortest path, in addition to setting the parent of each of a square's neighbors to itself, it also keeps track of how many steps it took to get to each square.
+          When checking neighbors, if a neighbor already has a parent it checks to see how many steps it took to get to that square from its parent.  If it took less to get to the current square plus one, then it sets the neighbor square's parent to itself, and the steps count to get to that neighbor to that of the current square plus one.
+        </p>
+        <p class="p">
+          This ensures each square's parent is the one with the shortest route from the start, ensuring that we have the shortest route when we find the target.
+        </p>
+        <p class="p">
+          These extra steps do make this algorithm a bit slower than the more generic <span class="bold">Best First Search</span> in terms of actual processing speed, but still the same amount of steps.
+          However if you need the shortest path, then this will be superior to the <span class="bold">Best First Search</span>.
+        </p>
       </div>
     </div>
   </body>

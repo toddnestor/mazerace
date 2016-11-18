@@ -97,6 +97,10 @@ $spacer: 20px !default;
   padding-left: $spacer;
 }
 
+.p-l-sm {
+  padding-left: $spacer / 2;
+}
+
 .p-l-md {
   padding-left: $spacer * 1.5;
 }

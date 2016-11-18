@@ -1,0 +1,31 @@
+.modal {
+  transition-property: all;
+	transition-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    background: #fff;
+    min-width: 600px;
+    min-height: 600px;
+
+    .close {
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+  }
+}
