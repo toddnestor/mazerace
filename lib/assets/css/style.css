@@ -1866,6 +1866,24 @@ a, a:hover {
 .pomegranate-border-hover:hover {
   border-color: #c0392b; }
 
+.pink-bg {
+  background-color: #ffc0cb; }
+
+.pink-font {
+  color: #ffc0cb; }
+
+.pink-border {
+  border-color: #ffc0cb; }
+
+.pink-font-hover:hover {
+  color: #ffc0cb; }
+
+.pink-bg-hover:hover {
+  background-color: #ffc0cb; }
+
+.pink-border-hover:hover {
+  border-color: #ffc0cb; }
+
 h1 {
   font-size: 36px; }
 
