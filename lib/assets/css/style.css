@@ -2135,7 +2135,7 @@ img {
     min-height: 0;
     top: 65px; }
     .controls.closed .control-buttons {
-      margin-top: 20px; }
+      margin-top: 0; }
     .controls.closed .control-button {
       opacity: 0.5; }
       .controls.closed .control-button:hover {
@@ -2144,7 +2144,21 @@ img {
       display: none; }
     .controls.closed .algorithm-selection {
       display: none; }
-    .controls.closed .algorithm-options {
+    .controls.closed .algorithm-options label {
+      display: block;
+      text-align: center;
+      opacity: 0.5; }
+      .controls.closed .algorithm-options label:hover {
+        opacity: 1; }
+      .controls.closed .algorithm-options label input[type=number] {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 5px 10px;
+        text-align: center;
+        width: 70px; }
+    .controls.closed .algorithm-options h3 {
+      display: none; }
+    .controls.closed .algorithm-options li:first-child {
       display: none; }
     .controls.closed .erase-button {
       display: none; }
@@ -2212,5 +2226,15 @@ svg rect {
     box-shadow: 3px 5px 5px black; }
     .demo button:active {
       box-shadow: 0 2px 3px black; }
+
+.algorithm-options input[type="number"] {
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  width: 50px; }
+
+.algorithm-options li {
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map*/

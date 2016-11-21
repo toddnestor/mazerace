@@ -62,7 +62,7 @@ img {
     top: 65px;
 
     .control-buttons {
-      margin-top: 20px;
+      margin-top: 0;
     }
 
     .control-button {
@@ -82,7 +82,31 @@ img {
     }
 
     .algorithm-options {
-      display: none;
+      label {
+        display: block;
+        text-align: center;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        input[type=number] {
+          font-size: 30px;
+          font-weight: bold;
+          padding: 5px 10px;
+          text-align: center;
+          width: 70px;
+        }
+      }
+
+      h3 {
+        display: none;
+      }
+
+      li:first-child {
+        display: none;
+      }
     }
 
     .erase-button {
@@ -172,5 +196,20 @@ svg {
     &:active {
       box-shadow: 0 2px 3px black;
     }
+  }
+}
+
+.algorithm-options {
+
+  input[type="number"] {
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    width: 50px;
+  }
+
+  li {
+    margin-bottom: 10px;
   }
 }
