@@ -2255,4 +2255,40 @@ svg rect {
 .algorithm-options li {
   margin-bottom: 10px; }
 
+.tooltip {
+  display: inline-block;
+  position: relative; }
+  .tooltip:before {
+    content: attr(title);
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px; }
+  .tooltip:after {
+    content: "";
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-top: 6px solid #000;
+    border-bottom: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .tooltip:hover:before, .tooltip:hover:after {
+    display: block; }
+
 /*# sourceMappingURL=style.css.map*/
