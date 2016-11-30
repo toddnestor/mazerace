@@ -174,8 +174,16 @@
           In a <span class="bold">Best First Search</span>, we start by processing the starting node (in the context of Maze Race, nodes are squares) and getting it's neighbors.
         </p>
         <p class="p">
-          We check each of it's neighbors to see if they are the target (or ending square), if they are we return that target and then trace the path from it back to the starting node.
-          If we don't find the target we add each of the neighbors to the stack and then we start the process over taking the node that is closest to the target.  In Maze Race closeness is calculated as the distance between the square and the target.
+          We check each of it's neighbors to see if they are the target (ending square), if they are we return that target and then trace the path from it back to the starting node.
+          If we don't find the target we add each of the neighbors to the store and then we start the process over taking the node that is closest to the target.
+          In Maze Race closeness is calculated as the distance between the square and the target.
+        </p>
+        <p class="p">
+          To optimize grabbing the square closest to the target each time we use a priority queue (implemented using a heap).
+          With the priority queue grabbing the item closest to the end square is done in O(log n) time, and inserting items into the store also takes O(log n) time.
+        </p>
+        <p class="p">
+          This is a vast improvement over the O(n) (linear) time that would be used if we had to iterate through the store each time to find the closest square.
         </p>
         <p class="p">
           We contiue this process until we find the target or the queue is empty.  This method does not necessarily return the shortest path, just the quickest to find.
@@ -198,6 +206,9 @@
         </p>
         <p class="p">
           We contiue this process until we find the target or the queue is empty.  Unlike the more generic <span class="bold">Best First Search</span>, the <span class="bold">A*</span> search returns the shortest path.
+        </p>
+        <p class="p">
+          Like the Best First Search, A* also utilizes a priority queue (implemented using a heap) to speed up the square selection when grabbing the next square to test.  See the description of the Best First Search for more details on that.
         </p>
         <p class="p">
           To be able to have the shortest path, in addition to setting the parent of each of a square's neighbors to itself, it also keeps track of how many steps it took to get to each square.
