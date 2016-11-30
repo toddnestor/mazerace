@@ -95,7 +95,11 @@ One thing to keep in mind is that in MazeRace it is only considered one step to 
 
 ### Best First Search
 
-  In a Best First Search, after processing the starting node it searches the store to find the node closest to the target and uses that one to process next.  When solving a maze the closest to the target is in terms of distance, so that is calculated using the Pythagorean Theorem ( a^2 + b^2 = c^2 ), but solved for c, so c = √(a^2 + b^2).
+  In a Best First Search it always chooses the node from the store closest to the target to process next so that it can increase it's chances of getting there sooner.  This can be implemented multiple ways, but is commonly done with a Priority Queue using a Heap, which is how I have done it in Maze Race.
+
+  Using the Priority Queue we get a time complexity of O(log n) for both inserting new nodes to the store and grabbing the next node to process.  Another way to implement this would be to loop over the entire store whenever grabbing the next node to process and calculating which is closest to the target.  That would give you a time complexity of O(1) for inserting nodes, but O(n) for grabbing the next node to process.
+
+  When solving a maze the closest to the target is in terms of distance, so that is calculated using the Pythagorean Theorem ( a^2 + b^2 = c^2 ), but solved for c, so c = √(a^2 + b^2).
 
   a and b are calculated by squaring the difference of the corresponding x and y coordinates of the square being checked and the target.
 
@@ -118,44 +122,21 @@ One thing to keep in mind is that in MazeRace it is only considered one step to 
 
 ### A\*
 
-  An A\* (pronounced "a star") search is a type of Best First Search, and so in Maze Race it inherits from the Best First Search class.  A\* and Best First Search always tie in terms of steps it takes to solve a maze, however A\* will return the shortest path (like Breadth First Search does), whereas a Best First Search does not necessarily return the shortest path.
+  An A\* (pronounced "a star") search is a type of Best First Search, and so in Maze Race it inherits from the Best First Search class.  The A\* will always return the shortest path though while the more general Best First Search does not necessarily do so.
 
   To accomplish this the A\* algorithm updates the parent of each node (or square in terms of Maze Race) as it processes them.  It stores information about how many steps it took to get to each square so if it encounters another square that has that square as a neighbor it can check if it got to the currently checking square in less steps (plus one, because it would take one step to get from the current square to the neighbor), and if so it sets the steps information of that square to the same as the current square plus one, and also sets the parent of that square to the current square.
 
-  In code it looks like this:
+  Maze Race uses most of it's parent class's methods, and just needs to override how the "gscore" is calculated.  The gscore tracks how far we've come from the parent, in the Best First Search base class this is always just zero since we don't care how far from the parent we've come, we just keep aiming for the target.  The main reason the Best First Search class has gscore calculation is so that other best first search's that inherit from it can utilize this.
+
+  In the A\* search the gscore calculation works like this:
 
   ```javascript
-  processSquare(square, diagonal = false) {
-    this.steps++;
-
-    this.makeSeen(square);
-    let neighbors = this.grid.getNeighbors(square, diagonal);
-    let newStore = [];
-
-    neighbors.forEach( neighbor => {
-      let gScore = this.gScore(square) + 1;
-      let gScoreIsBest = false;
-
-      if( !this.alreadySeen(neighbor) ) {
-        gScoreIsBest = true;
-        neighbor.parent = square;
-        this.store.push(neighbor);
-        newStore.push(neighbor);
-        this.makeSeen(neighbor);
-      } else if( gScore < this.gScore(neighbor) ) {
-        gScoreIsBest = true;
-      }
-
-      if( gScoreIsBest ) {
-        neighbor.parent = square;
-        this.setgScore(neighbor, gScore);
-      }
-    });
-
-    this.updateMaxLength();
-
-    return newStore;
+  calculateGscore(square, parent) {
+    return this.gScore(parent) + this.gScoreAddition(parent, square);
   }
-  ```
 
-  In Maze Race, the A\* Search is the only one that overrides the AlgorithmBase class's `processSquare` method.  And it does this so that it can update the parent of the squares as it goes along making sure every square's path back to the starting square is the shortest possible.
+  gScoreAddition(square, neighbor) {
+    let sameRow = square.row == neighbor.row;
+    let sameCol = square.col == neighbor.col;
+    return sameRow || sameCol ? 1 : Math.sqrt(2);
+  }```
