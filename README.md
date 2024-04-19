@@ -2,7 +2,7 @@
 
 [MazeRace live][ghpages]
 
-[ghpages]: http://mazerace.io
+[ghpages]: https://toddnestor.github.io/mazerace
 [development-readme]: ./docs/README.md
 
 [MazeRace][ghpages] compares algorithms such as Breadth First Search, A\*, Best First Search, and Depth First Search.  Maze Race is inspired by [Pathfinder.js](https://qiao.github.io/PathFinding.js/visual/)
